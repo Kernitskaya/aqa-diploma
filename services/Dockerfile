@@ -15,7 +15,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # копируем исходный код
-COPY .. .
+COPY ./ ./
 
 EXPOSE 9999
 CMD [ "node", "app.js" ]

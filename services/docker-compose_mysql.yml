@@ -11,3 +11,7 @@ services:
       - MYSQL_DATABASE=app
       - MYSQL_USER=app
       - MYSQL_PASSWORD=pass
+  web:
+    build: .
+    ports:
+      - "9999:9999"
