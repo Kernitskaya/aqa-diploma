@@ -46,4 +46,15 @@ public class AuthInfo {
     public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
+
+    @Override
+    public String toString() {
+        return "AuthInfo{" +
+                "cardNumber='" + cardNumber + '\'' +
+                ", monthOfCard='" + monthOfCard + '\'' +
+                ", yearOfCard='" + yearOfCard + '\'' +
+                ", ownerName='" + ownerName + '\'' +
+                ", cvvCode='" + cvvCode + '\'' +
+                '}';
+    }
 }
