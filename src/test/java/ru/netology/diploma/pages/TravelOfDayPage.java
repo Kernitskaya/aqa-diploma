@@ -3,6 +3,7 @@ package ru.netology.diploma.pages;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.diploma.pages.components.BuyByCardTab;
 import ru.netology.diploma.pages.components.BuyByCreditTab;
+import ru.netology.diploma.pages.components.SuccessNotification;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -17,6 +18,7 @@ public class TravelOfDayPage {
     private SelenideElement costItem = $(byText("Всего 45 000 руб.!"));
     private SelenideElement buyByCard = $(byText("Купить"));
     private SelenideElement buyByCredit = $(byText("Купить в кредит"));
+    private SelenideElement notificationTitle = $("[class=notification__title]");
 
     private TravelOfDayPage() {}
 
@@ -24,11 +26,12 @@ public class TravelOfDayPage {
         return new TravelOfDayPage();
     }
 
-    public BuyByCardTab buyByCardTab() {
+    public BuyByCardTab openBuyByCardTab() {
+        buyByCard.click();
         return new BuyByCardTab();
     }
 
-    public BuyByCreditTab buyByCreditTab() {
+    public BuyByCreditTab openBuyByCreditTab() {
         return new BuyByCreditTab();
     }
 
@@ -40,5 +43,13 @@ public class TravelOfDayPage {
         costItem.shouldBe(visible);
         buyByCard.shouldBe(visible);
         buyByCredit.shouldBe(visible);
+    }
+
+    public SuccessNotification successNotification() {
+        return SuccessNotification.newInstance();
+    }
+
+    public void checkNotificationHidden() {
+        notificationTitle.shouldNot(visible);
     }
 }

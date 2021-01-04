@@ -1,7 +1,7 @@
 package ru.netology.diploma.utils;
 
 import com.github.javafaker.Faker;
-import ru.netology.diploma.domain.AuthInfo;
+import ru.netology.diploma.domain.CardData;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -15,8 +15,8 @@ public class DataGenerator {
 
     private DataGenerator() {}
 
-    public static AuthInfo authInfo(boolean approved) {
-        AuthInfo authInfo = new AuthInfo();
+    public static CardData authInfo(boolean approved) {
+        CardData authInfo = new CardData();
         LocalDate parsedDate = getParseData();
 
         authInfo.setCardNumber(approved ? approvedCardNumber : declinedCardNumber);

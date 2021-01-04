@@ -1,6 +1,6 @@
 package ru.netology.diploma.domain;
 
-public class AuthInfo {
+public class CardData {
     private String cardNumber;
     private String monthOfCard;
     private String yearOfCard;
@@ -49,7 +49,7 @@ public class AuthInfo {
 
     @Override
     public String toString() {
-        return "AuthInfo{" +
+        return "CardData{" +
                 "cardNumber='" + cardNumber + '\'' +
                 ", monthOfCard='" + monthOfCard + '\'' +
                 ", yearOfCard='" + yearOfCard + '\'' +
