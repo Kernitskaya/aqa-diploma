@@ -8,24 +8,25 @@ import java.time.format.DateTimeFormatter;
 
 public class DataGenerator {
 
-    private static String approvedCardNumber = "4444 4444 4444 4441";
-    private static String declinedCardNumber = "4444 4444 4444 4442";
-
     private static Faker faker = new Faker();
 
     private DataGenerator() {}
 
-    public static CardData authInfo(boolean approved) {
+    public static CardData authInfo(CardType cardType) {
         CardData authInfo = new CardData();
         LocalDate parsedDate = getParseData();
 
-        authInfo.setCardNumber(approved ? approvedCardNumber : declinedCardNumber);
+        authInfo.setCardNumber(cardType.label);
         authInfo.setMonthOfCard(getFormattedMoth(parsedDate));
         authInfo.setYearOfCard(getFormattedYear(parsedDate));
         authInfo.setOwnerName(faker.name().firstName());
         authInfo.setCvvCode(String.valueOf(faker.random().nextInt(100, 999)));
 
         return authInfo;
+    }
+
+    public static String getRandomFirstNumber() {
+        return String.valueOf(faker.random().nextInt(0, 9));
     }
 
     private static LocalDate getParseData() {

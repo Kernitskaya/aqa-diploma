@@ -3,7 +3,7 @@ package ru.netology.diploma.pages;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.diploma.pages.components.BuyByCardTab;
 import ru.netology.diploma.pages.components.BuyByCreditTab;
-import ru.netology.diploma.pages.components.SuccessNotification;
+import ru.netology.diploma.pages.components.Notification;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -28,7 +28,7 @@ public class TravelOfDayPage {
 
     public BuyByCardTab openBuyByCardTab() {
         buyByCard.click();
-        return new BuyByCardTab();
+        return BuyByCardTab.newInstance();
     }
 
     public BuyByCreditTab openBuyByCreditTab() {
@@ -45,8 +45,8 @@ public class TravelOfDayPage {
         buyByCredit.shouldBe(visible);
     }
 
-    public SuccessNotification successNotification() {
-        return SuccessNotification.newInstance();
+    public Notification notification() {
+        return Notification.newInstance();
     }
 
     public void checkNotificationHidden() {
