@@ -6,11 +6,15 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class BuyByCreditTab {
+public class BuyByCreditTab extends BaseBuyTab {
 
     private SelenideElement tabTitle = $(byText("Кредит по данным карты"));
 
-    public BuyByCreditTab() {
+    private BuyByCreditTab() {
         tabTitle.shouldBe(visible);
+    }
+
+    public static BuyByCreditTab newInstance() {
+        return new BuyByCreditTab();
     }
 }

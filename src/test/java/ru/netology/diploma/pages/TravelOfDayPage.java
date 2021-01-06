@@ -32,7 +32,8 @@ public class TravelOfDayPage {
     }
 
     public BuyByCreditTab openBuyByCreditTab() {
-        return new BuyByCreditTab();
+        buyByCredit.click();
+        return BuyByCreditTab.newInstance();
     }
 
     public void checkPageContent() {
