@@ -4,6 +4,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeEach;
 
 public abstract class BaseTest {
     public static String START_URL = "http://localhost:8080";
