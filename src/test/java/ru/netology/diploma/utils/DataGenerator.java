@@ -18,9 +18,7 @@ public class DataGenerator {
 
         authInfo.setCardNumber(cardType.label);
         authInfo.setMonthOfCard(getFormattedMoth(parsedDate));
-//        authInfo.setYearOfCard(getFormattedYear(parsedDate));
-
-        authInfo.setYearOfCard("25");
+        authInfo.setYearOfCard(getFormattedYear(parsedDate));
         authInfo.setOwnerName(faker.name().firstName());
         authInfo.setCvvCode(String.valueOf(faker.random().nextInt(100, 999)));
 
@@ -40,7 +38,6 @@ public class DataGenerator {
 
     private static String getFormattedYear(LocalDate date) {
         String year = String.valueOf(date.getYear());
-        System.out.println(year);
         return year.substring(year.length() - 2);
     }
 

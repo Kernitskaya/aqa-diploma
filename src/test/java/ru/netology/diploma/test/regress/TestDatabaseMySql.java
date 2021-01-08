@@ -2,7 +2,7 @@ package ru.netology.diploma.test.regress;
 
 import org.junit.jupiter.api.Test;
 import ru.netology.diploma.db.interactions.AssertionChecker;
-import ru.netology.diploma.db.interactions.DbInteractionUtilsPostgre;
+import ru.netology.diploma.db.interactions.DbInteractionUtilsMySql;
 import ru.netology.diploma.domain.CardData;
 import ru.netology.diploma.pages.TravelOfDayPage;
 import ru.netology.diploma.test.DatabaseTest;
@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static ru.netology.diploma.utils.CardType.APPROVED;
 import static ru.netology.diploma.utils.CardType.UNKNOWN;
 
-public class TestDatabasePostgre extends DatabaseTest {
+public class TestDatabaseMySql extends DatabaseTest {
 
     @Test
     public void testSuccessPaymentByCard() {
@@ -65,7 +65,7 @@ public class TestDatabasePostgre extends DatabaseTest {
     @Override
     public void setUpUtils() {
         if (dbInteractionDbUtils == null) {
-            dbInteractionDbUtils = new DbInteractionUtilsPostgre();
+            dbInteractionDbUtils = new DbInteractionUtilsMySql();
         }
     }
 }

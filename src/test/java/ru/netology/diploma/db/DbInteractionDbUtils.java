@@ -47,10 +47,10 @@ public abstract class DbInteractionDbUtils {
         return paymentEntity;
     }
 
-    public CreditRequestEntity getCreditRequestEntity(String transactionId) {
+    public CreditRequestEntity getCreditRequestEntity(String creditId) {
         CreditRequestEntity creditRequestEntity = new CreditRequestEntity();
         try {
-            String getPaymentByTransaction = String.format("SELECT * FROM payment_entity WHERE transaction_id='%s'", transactionId);
+            String getPaymentByTransaction = String.format("SELECT * FROM credit_request_entity WHERE bank_id='%s'", creditId);
             QueryRunner runner = new QueryRunner();
             try (
                     Connection conn = DriverManager.getConnection(getUrl(), USER, PASSWORD))

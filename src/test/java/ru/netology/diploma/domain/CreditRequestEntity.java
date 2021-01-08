@@ -37,4 +37,14 @@ public class CreditRequestEntity {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    @Override
+    public String toString() {
+        return "CreditRequestEntity{" +
+                "id='" + id + '\'' +
+                ", bank_id='" + bank_id + '\'' +
+                ", status='" + status + '\'' +
+                ", created='" + created + '\'' +
+                '}';
+    }
 }
