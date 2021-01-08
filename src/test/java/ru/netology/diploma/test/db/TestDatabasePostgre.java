@@ -1,4 +1,4 @@
-package ru.netology.diploma.test.regress;
+package ru.netology.diploma.test.db;
 
 import org.junit.jupiter.api.Test;
 import ru.netology.diploma.db.interactions.AssertionChecker;
